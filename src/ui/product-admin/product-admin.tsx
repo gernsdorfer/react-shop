@@ -22,27 +22,14 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
         };
     }
 
-    changeProductName(event: React.SyntheticEvent<HTMLInputElement>) {
+    changeProduct(productProperty: 'price' | 'name', event: React.SyntheticEvent<HTMLInputElement>) {
         this.setState(
             {
                 product: Object.assign(
                     {},
                     this.state.product,
                     {
-                        name: event.target['value']
-                    }
-                )
-            });
-    }
-
-    changeProductPrice(event: React.SyntheticEvent<HTMLInputElement>) {
-        this.setState(
-            {
-                product: Object.assign(
-                    {},
-                    this.state.product,
-                    {
-                        price: event.target['value']
+                        [productProperty]: event.target['value']
                     }
                 )
             });
@@ -58,13 +45,13 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
                 <input
                     type="text"
                     value={product.name}
-                    onChange={(event) => this.changeProductName(event)}
+                    onChange={(event) => this.changeProduct('name',event)}
                 /> <br />
                 Price:
                 <input
                     type="text"
                     value={product.price}
-                    onChange={(event) => this.changeProductPrice(event)}
+                    onChange={(event) => this.changeProduct('price',event)}
                 /> <br />
                 <button onClick={() => saveProduct(product)}>save</button>
             </div>
