@@ -1,11 +1,11 @@
 import {Product} from '../models/product';
-export const ADD_TO_SHELF: string = 'ADD_TO_SHELF';
+export const CREATE_PRODUCT: string = 'CREATE_PRODUCT';
 export const REMOVE_PRODUCT: string = 'REMOVE_PRODUCT';
 export const EDIT_PRODUCT: string = 'EDIT_PRODUCT';
 
-export const addProduct = (product: Product) => {
+export const createProduct = (product: Product) => {
     return {
-        type: ADD_TO_SHELF,
+        type: CREATE_PRODUCT,
         payload: {product: product}
     };
 };

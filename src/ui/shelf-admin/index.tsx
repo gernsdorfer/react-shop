@@ -28,6 +28,7 @@ export default class Shelf extends React.PureComponent<Props , State> {
                         </div>
                     );
                 })}
+
             </div>
 
         );

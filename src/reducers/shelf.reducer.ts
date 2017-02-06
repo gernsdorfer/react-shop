@@ -1,5 +1,5 @@
 import {Product} from '../models/product';
-import {ADD_TO_SHELF, REMOVE_PRODUCT, EDIT_PRODUCT} from '../actions/shelf.action';
+import { REMOVE_PRODUCT, EDIT_PRODUCT, CREATE_PRODUCT} from '../actions/shelf.action';
 
 export interface Shelf {
     products: Array<Product>;
@@ -24,14 +24,14 @@ const INITIAL_STATE = {
 
 export function shelfReducer(state: Shelf = INITIAL_STATE, action: Action) {
     switch (action.type) {
-        case ADD_TO_SHELF:
+        case CREATE_PRODUCT:
             return Object.assign({}, state, {products: [...state.products, action.payload.product]});
         case REMOVE_PRODUCT:
             return Object.assign(
                 {},
                 state,
                 {
-                    products: state.products.filter((product) => product.id === action.payload.productId)
+                    products: state.products.filter((product) => product.id !== action.payload.productId)
                 }
             );
         case EDIT_PRODUCT:

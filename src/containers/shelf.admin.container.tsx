@@ -5,7 +5,9 @@ import {AppState} from '../reducers/index';
 import {Dispatch} from 'redux';
 import {Link} from 'react-router';
 import ShelfAdmin from '../ui/shelf-admin';
-import {removeProduct} from '../actions/shelf.action';
+import {removeProduct, createProduct} from '../actions/shelf.action';
+import ProductAdmin from '../ui/product-admin/product-admin';
+
 interface OwnProps {
 }
 
@@ -20,17 +22,19 @@ function mapStateToProps(state: AppState): ConnectedState {
 
 interface ConnectedDispatch {
     removeProduct: (productId: number) => void;
+    addProduct: (product: Product) => void;
 
 }
 const mapDispatchToProps = (dispatch: Dispatch<AppState>): ConnectedDispatch => {
     return {
-        removeProduct: (productId: number) => dispatch(removeProduct(productId))
+        removeProduct: (productId: number) => dispatch(removeProduct(productId)),
+        addProduct: (product: Product) => dispatch(createProduct(product))
     };
 };
 
 class ShelfAdminContainer extends React.PureComponent<ConnectedState & ConnectedDispatch & OwnProps, {}> {
     render() {
-        const {shelfProducts, removeProduct}  = this.props;
+        const {shelfProducts, removeProduct, addProduct}  = this.props;
 
         return (
             <div>
@@ -39,6 +43,10 @@ class ShelfAdminContainer extends React.PureComponent<ConnectedState & Connected
                     products={shelfProducts}
                     removeFromShelf={(productId) => removeProduct(productId) }
                 />
+                <ProductAdmin
+                    product={{name: '',price : 0,id : new Date().getUTCMilliseconds()}}
+                    saveProduct={(product) => addProduct(product)}
+                    />
             </div>
         );
     }
