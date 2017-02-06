@@ -5,7 +5,7 @@ import {AppState} from '../reducers/index';
 import {Dispatch} from 'redux';
 import {Link} from 'react-router';
 import {editProduct} from '../actions/shelf.action';
-import ProductAdmin from '../ui/product-admin';
+import ProductAdmin from '../ui/product-admin/product-admin';
 
 interface OwnProps {
 }

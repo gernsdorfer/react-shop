@@ -5,13 +5,13 @@ export const REMOVE_FROM_BASKET: string = 'REMOVE_FROM_BASKET';
 export const addProductToBasket = (product: Product) => {
     return {
         type: ADD_TO_BASKET,
-        payload: product
+        payload: {product : product}
     };
 };
 
 export const removeProductFromBasket = (productIndex: number) => {
     return {
         type: REMOVE_FROM_BASKET,
-        payload: productIndex
+        payload: {productIndex: productIndex}
     };
 };

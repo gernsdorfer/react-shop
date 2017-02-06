@@ -6,20 +6,20 @@ export const EDIT_PRODUCT: string = 'EDIT_PRODUCT';
 export const addProduct = (product: Product) => {
     return {
         type: ADD_TO_SHELF,
-        payload: product
+        payload: {product: product}
     };
 };
 
 export const removeProduct = (productId: number) => {
     return {
         type: REMOVE_PRODUCT,
-        payload: productId
+        payload: {productId: productId}
     };
 };
 
 export const editProduct = (product: Product) => {
     return {
         type: EDIT_PRODUCT,
-        payload: product
+        payload: {product: product}
     };
 };

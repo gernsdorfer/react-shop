@@ -15,7 +15,7 @@ export default class Basket extends React.PureComponent<Props , State> {
         return (
             <div>
                 {products.map((product,index) => {
-                    return (<div key={index}> {product.name}
+                    return (<div key={index}> {product.name} - {product.price}
                         <button onClick={() => removeProduct(index)}>remove Product</button>
                     </div>);
                 })}
