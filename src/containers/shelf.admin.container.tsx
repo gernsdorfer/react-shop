@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AppState>): ConnectedDispatch => 
 
 class ShelfAdminContainer extends React.PureComponent<ConnectedState & ConnectedDispatch & OwnProps, {}> {
     render() {
-        const {shelfProducts}  = this.props;
+        const {shelfProducts, removeProduct}  = this.props;
 
         return (
             <div>

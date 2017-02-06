@@ -10,6 +10,7 @@ interface State {
 }
 
 export default class Shelf extends React.PureComponent<Props , State> {
+
     render() {
         const {
             product,
@@ -22,7 +23,6 @@ export default class Shelf extends React.PureComponent<Props , State> {
                 Price: <input type="text" value={product.price} /><br />
                 <button onClick={() => saveProduct(product)}>save</button>
             </div>
-
         );
     };
 };
