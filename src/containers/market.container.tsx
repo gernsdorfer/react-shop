@@ -24,12 +24,12 @@ function mapStateToProps(state: AppState): ConnectedState {
 
 interface ConnectedDispatch {
     addProductToBasket: (product: Product) => void;
-    removeProductFromBasket: (product: Product) => void;
+    removeProductFromBasket: (productId: number) => void;
 }
 const mapDispatchToProps = (dispatch: Dispatch<AppState>): ConnectedDispatch => {
     return {
         addProductToBasket: (product: Product) => dispatch(addProductToBasket(product)),
-        removeProductFromBasket: (product: Product) => dispatch(removeProductFromBasket(product))
+        removeProductFromBasket: (productIndex: number) => dispatch(removeProductFromBasket(productIndex))
     };
 };
 
@@ -47,11 +47,11 @@ class MarketContainer extends React.PureComponent<ConnectedState & ConnectedDisp
                 <Link to='/shelf-admin' activeClassName='active'>Shelf Admin</Link>
                 <Basket
                     products={basketProducts}
+                    removeProduct={(productIndex)=> removeProductFromBasket(productIndex)}
                 />
                 <Shelf
                     products={shelfProducts}
                     addToBasket={(product) => addProductToBasket(product)}
-                    removeFromBasket={(product) => removeProductFromBasket(product)}
                 />
             </div>
         );

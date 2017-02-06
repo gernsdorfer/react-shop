@@ -34,7 +34,7 @@ class ShelfAdminContainer extends React.PureComponent<ConnectedState & Connected
 
         return (
             <div>
-                <Link to='/shelf-admin' activeClassName='active'>Market</Link>
+                <Link to='/' activeClassName='active'>Market</Link>
                 <ShelfAdmin
                     products={shelfProducts}
                     removeFromShelf={(productId) => removeProduct(productId) }
