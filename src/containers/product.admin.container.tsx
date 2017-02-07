@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import {Product} from '../models/product';
 import {AppState} from '../reducers/index';
 import {Dispatch} from 'redux';
-import {Link} from 'react-router';
 import {editProduct} from '../actions/shelf.action';
 import ProductAdmin from '../ui/product-admin/product-admin';
+import Shop from '../ui/shop/shop';
 
 interface OwnProps {
 }
@@ -36,15 +36,17 @@ class ProductAdminContainer extends React.PureComponent<ConnectedState & Connect
     render() {
         const {editProduct, shelfProducts, params = {productId: 0}}  = this.props,
             product: Product = shelfProducts
-                .filter((product) => product.id !== params.productId)
-                .reduce((start, current) => current, {id: 0, name: '', price: 0});
+                .filter((product) => product.id == params.productId)
+                .reduce((start, current) => current, {name: '', category: '', color: '', price: 0, id: 0});
+
+        console.log(shelfProducts.filter((product) => {console.log(product.id, params.productId, product.id === params.productId); return product.id !== params.productId}));
         return (
-            <div>
-                <Link to='/' activeClassName='active'>Market</Link>
+            <Shop>
                 <ProductAdmin
                     product={product}
-                    saveProduct={(product) => editProduct(product)}/>
-            </div>
+                    saveProduct={(product) => editProduct(product)}
+                />
+            </Shop>
         );
     }
 }

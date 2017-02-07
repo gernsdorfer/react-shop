@@ -11,9 +11,9 @@ import ProductAdmin from './containers/product.admin.container';
 ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory}>
-                <Route path='/' component={Market}/>
-                <Route path='/shelf-admin' component={ShelfAdmin}/>
-                <Route path='/product/edit/:productId' component={ProductAdmin}/>
+                <Route path="/" component={Market}/>
+                <Route path="/shelf-admin" component={ShelfAdmin}/>
+                <Route path="/product/edit/:productId" component={ProductAdmin}/>
         </Router>
     </Provider>,
     document.getElementById('root') as HTMLElement

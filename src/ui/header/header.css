@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(30, 140, 150);
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header span {
+    font-size: 24px;
+}
+
+.header .count {
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    font-family: Arial, sans-serif;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    line-height: 22px;
+    text-align: center;
+    margin-left: 4px;
+    font-weight: 400;
+    top: -1px;
+    position: relative;
+}
+
+.title {
+    font-weight: 900;
+}
