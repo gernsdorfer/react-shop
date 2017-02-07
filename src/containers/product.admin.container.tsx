@@ -13,7 +13,7 @@ interface OwnProps {
 interface ConnectedState {
     shelfProducts: Array<Product>;
     params?: {
-        productId: number
+        productId: string
     };
 }
 function mapStateToProps(state: AppState): ConnectedState {
@@ -34,9 +34,10 @@ const mapDispatchToProps = (dispatch: Dispatch<AppState>): ConnectedDispatch => 
 
 class ProductAdminContainer extends React.PureComponent<ConnectedState & ConnectedDispatch & OwnProps, {}> {
     render() {
-        const {editProduct, shelfProducts, params = {productId: 0}}  = this.props,
+        const {editProduct, shelfProducts, params = {productId: '0'}}  = this.props,
+
             product: Product = shelfProducts
-                .filter((product) => product.id !== params.productId)
+                .filter((product) => product.id === parseInt(params.productId))
                 .reduce((start, current) => current, {id: 0, name: '', price: 0});
         return (
             <div>
