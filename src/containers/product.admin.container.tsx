@@ -39,7 +39,6 @@ class ProductAdminContainer extends React.PureComponent<ConnectedState & Connect
                 .filter((product) => product.id == params.productId)
                 .reduce((start, current) => current, {name: '', category: '', color: '', price: 0, id: 0});
 
-        console.log(shelfProducts.filter((product) => {console.log(product.id, params.productId, product.id === params.productId); return product.id !== params.productId}));
         return (
             <Shop>
                 <ProductAdmin

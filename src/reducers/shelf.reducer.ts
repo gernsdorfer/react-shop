@@ -34,6 +34,27 @@ const INITIAL_STATE = {
             'name': 'Electric Blue-Violet',
             'color' : '#a17fcf',
             'price': 22.98
+        },
+        {
+            'id': 4,
+            'category': 'Lipstick',
+            'name': 'Energetic Rosé',
+            'color' : '#f99',
+            'price': 20.98
+        },
+        {
+            'id': 5,
+            'category': 'Lipstick',
+            'name': 'Green Balance',
+            'color' : '#83c071',
+            'price': 22.98
+        },
+        {
+            'id': 6,
+            'category': 'Lipstick',
+            'name': 'Excessive Orange',
+            'color' : '#e90',
+            'price': 20.98
         }
     ]
 };

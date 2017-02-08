@@ -40,7 +40,7 @@ class ShelfAdminContainer extends React.PureComponent<ConnectedState & Connected
                 <ShelfAdmin
                     products={shelfProducts}
                     removeFromShelf={(productId) => removeProduct(productId)}
-                    addToShelf={() => addProduct({name: 'New Product', category: 'Lipstick', color: '#83c071', price: 19.99, id: new Date().getUTCMilliseconds()})}
+                    addToShelf={() => addProduct({name: 'New Product', category: 'Lipstick', color: '#333', price: 19.99, id: new Date().getUTCMilliseconds()})}
                 />
             </Shop>
         );
