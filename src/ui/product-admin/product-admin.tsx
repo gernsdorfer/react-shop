@@ -34,7 +34,7 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
                     {},
                     this.state.product,
                     {
-                        [productProperty]: event.target['value']
+                        [productProperty]: (event.target['type'] === 'number' ? parseFloat(event.target['value']) :  event.target['value'])
                     }
                 )
             });
@@ -79,7 +79,7 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
                 <div className="entry">
                     <label>Price</label>
                     <input
-                        type="text"
+                        type="number"
                         value={product.price}
                         onChange={(event) => this.changeProduct('price', event)}
                     />

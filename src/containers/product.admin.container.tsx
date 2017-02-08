@@ -38,7 +38,7 @@ class ProductAdminContainer extends React.PureComponent<ConnectedState & Connect
 
             product: Product = shelfProducts
                 .filter((product) => product.id === parseInt(params.productId))
-                .reduce((start, current) => current, {id: 0, name: '', price: 0});
+                .reduce((start, current) => current, {id: 0, name: '', category: '',color: '', price: 0});
         return (
             <Shop>
                 <ProductAdmin
