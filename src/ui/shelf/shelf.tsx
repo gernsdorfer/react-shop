@@ -1,5 +1,8 @@
 import * as React from 'react';
 import {Product} from '../../models/product';
+import Header from '../header/header';
+import './shelf.css';
+import {Link} from 'react-router';
 
 interface Props {
     products: Array<Product>;
@@ -17,12 +20,28 @@ export default class Shelf extends React.PureComponent<Props , State> {
         } = this.props;
 
         return (
-            <div>
+            <div className="shelf">
+                <Header
+                    rightButton={<Link to="/shelf-admin"><span className="icon-settings"/></Link>}
+                >
+                    Products
+                </Header>
                 {products.map((product) => {
                     return (
-                        <div key={product.id}>
-                            {product.name} - {product.price}€
-                            <button onClick={() => addToBasket(product)}>add to basket</button>
+                        <div key={product.id} className="product">
+                            <div className="color" style={{background: product.color}}/>
+                            <div className="name">
+                                <div className="category">
+                                    {product.category}
+                                </div>
+                                {product.name}
+                            </div>
+                            <div className="price">
+                                {product.price}€
+                            </div>
+                            <a onClick={() => addToBasket(product)}>
+                                <span className="icon-add"/>
+                            </a>
                         </div>
                     );
                 })}

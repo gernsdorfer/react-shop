@@ -1,0 +1,33 @@
+@import url('../../../public/icons.css');
+
+.product-admin {
+  flex-basis: 100%;
+}
+
+.product-admin .save {
+  font-size: 18px;
+}
+
+.product-admin .entry {
+  border-bottom: 1px solid rgba(30, 140, 150, .1);
+  padding: 20px 20px 20px 120px;
+}
+
+.product-admin .entry label {
+  text-transform: uppercase;
+  color: #999;
+  font-size: 14px;
+  margin-left: -100px;
+  float: left;
+}
+
+.product-admin .entry input {
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  width: 100%;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4em;
+  font-weight: 400;
+}

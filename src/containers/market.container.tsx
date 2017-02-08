@@ -2,11 +2,11 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import Shelf from '../ui/shelf/shelf';
 import Basket from '../ui/basket/basket';
+import Shop from '../ui/shop/shop';
 import {Product} from '../models/product';
 import {AppState} from '../reducers/index';
 import {addProductToBasket, removeProductFromBasket} from '../actions/basket.action';
 import {Dispatch} from 'redux';
-import {Link} from 'react-router';
 
 interface OwnProps {
 }
@@ -43,17 +43,16 @@ class MarketContainer extends React.PureComponent<ConnectedState & ConnectedDisp
         }  = this.props;
 
         return (
-            <div>
-                <Link to='/shelf-admin' activeClassName='active'>Shelf Admin</Link>
-                <Basket
-                    products={basketProducts}
-                    removeProduct={(productIndex)=> removeProductFromBasket(productIndex)}
-                />
+            <Shop>
                 <Shelf
                     products={shelfProducts}
                     addToBasket={(product) => addProductToBasket(product)}
                 />
-            </div>
+                <Basket
+                    products={basketProducts}
+                    removeProduct={(productIndex) => removeProductFromBasket(productIndex)}
+                />
+            </Shop>
         );
     }
 }

@@ -1,0 +1,39 @@
+@import url('../../../public/icons.css');
+
+.basket {
+  flex-basis: 40%;
+}
+
+.basket .product {
+  border-bottom: 1px solid rgba(30, 140, 150, .1);
+  display: flex;
+  align-items: center;
+}
+
+.basket .name {
+  flex-grow: 2;
+  margin: 15px 20px;
+}
+
+.basket .price {
+  font-weight: 100;
+  color: #666;
+  margin: 15px 20px 15px 0;
+}
+
+.basket .remove {
+  background: rgba(30, 140, 150, .3);
+  align-self: stretch;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  color: rgb(30, 140, 150);
+  font-size: 28px;
+}
+
+.basket .sum {
+  border-top: 1px solid rgba(30, 140, 150, .1);
+  margin-top: 3px;
+  padding: 15px 74px 15px 15px;
+  text-align: right;
+}

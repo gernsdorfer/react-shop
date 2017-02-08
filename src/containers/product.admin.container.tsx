@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import {Product} from '../models/product';
 import {AppState} from '../reducers/index';
 import {Dispatch} from 'redux';
-import {Link} from 'react-router';
 import {editProduct} from '../actions/shelf.action';
 import ProductAdmin from '../ui/product-admin/product-admin';
+import Shop from '../ui/shop/shop';
 
 interface OwnProps {
 }
@@ -40,12 +40,12 @@ class ProductAdminContainer extends React.PureComponent<ConnectedState & Connect
                 .filter((product) => product.id === parseInt(params.productId))
                 .reduce((start, current) => current, {id: 0, name: '', price: 0});
         return (
-            <div>
-                <Link to='/' activeClassName='active'>Market</Link>
+            <Shop>
                 <ProductAdmin
                     product={product}
-                    saveProduct={(product) => editProduct(product)}/>
-            </div>
+                    saveProduct={(product) => editProduct(product)}
+                />
+            </Shop>
         );
     }
 }

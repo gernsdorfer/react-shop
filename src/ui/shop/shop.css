@@ -1,0 +1,21 @@
+@import url('//fonts.googleapis.com/css?family=Lato:100,400,900');
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.shop {
+  display: flex;
+  align-content: stretch;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4em;
+  font-weight: 400;
+  min-height: 100%;
+}

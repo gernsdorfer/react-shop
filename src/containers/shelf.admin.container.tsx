@@ -3,10 +3,9 @@ import {connect} from 'react-redux';
 import {Product} from '../models/product';
 import {AppState} from '../reducers/index';
 import {Dispatch} from 'redux';
-import {Link} from 'react-router';
 import ShelfAdmin from '../ui/shelf-admin';
+import Shop from '../ui/shop/shop';
 import {removeProduct, createProduct} from '../actions/shelf.action';
-import ProductAdmin from '../ui/product-admin/product-admin';
 
 interface OwnProps {
 }
@@ -37,17 +36,13 @@ class ShelfAdminContainer extends React.PureComponent<ConnectedState & Connected
         const {shelfProducts, removeProduct, addProduct}  = this.props;
 
         return (
-            <div>
-                <Link to='/' activeClassName='active'>Market</Link>
+            <Shop>
                 <ShelfAdmin
                     products={shelfProducts}
-                    removeFromShelf={(productId) => removeProduct(productId) }
+                    removeFromShelf={(productId) => removeProduct(productId)}
+                    addToShelf={() => addProduct({name: 'New Product', category: 'Lipstick', color: '#333', price: 19.99, id: new Date().getUTCMilliseconds()})}
                 />
-                <ProductAdmin
-                    product={{name: '',price : 0,id : new Date().getUTCMilliseconds()}}
-                    saveProduct={(product) => addProduct(product)}
-                    />
-            </div>
+            </Shop>
         );
     }
 }

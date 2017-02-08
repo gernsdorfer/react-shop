@@ -1,0 +1,10 @@
+.shelf.shelf-admin {
+  flex-basis: 100%
+}
+
+.shelf.shelf-admin .name a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(30, 140, 150, .8);
+  font-size: 14px;
+}
