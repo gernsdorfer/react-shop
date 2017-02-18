@@ -5,6 +5,7 @@
   "devDependencies": {
     "react-scripts-ts": "1.0.6"
   },
+  "homepage" : "https://gernsdorfer.github.io/react-shop/",
   "dependencies": {
     "@types/history": "^2.0.0",
     "@types/redux-logger": "2.6.29",
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
+    "prebuild" : "rm -rf docs/",
     "build": "react-scripts-ts build",
+    "postbuild" : "mv build docs",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   }
