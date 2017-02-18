@@ -3,8 +3,8 @@ import './header.css';
 import ReactNode = React.ReactNode;
 
 interface Props {
-    leftButton?: ReactNode;
-    rightButton?: ReactNode;
+    buttonLeft?: ReactNode;
+    buttonRight?: ReactNode;
 }
 
 interface State {
@@ -15,13 +15,13 @@ export default class Header extends React.PureComponent<Props , State> {
         return (
             <div className="header">
                 <div>
-                    {this.props.leftButton}
+                    {this.props.buttonLeft}
                 </div>
                 <div className="title">
                     {this.props.children}
                 </div>
                 <div>
-                    {this.props.rightButton}
+                    {this.props.buttonRight}
                 </div>
             </div>
 

@@ -22,7 +22,7 @@ export default class Shelf extends React.PureComponent<Props , State> {
         return (
             <div className="shelf">
                 <Header
-                    rightButton={<Link to="/shelf-admin"><span className="icon-settings"/></Link>}
+                    buttonRight={<Link to="/shelf-admin"><span className="icon-settings"/></Link>}
                 >
                     Products
                 </Header>

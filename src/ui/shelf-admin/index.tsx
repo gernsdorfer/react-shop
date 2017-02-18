@@ -24,8 +24,8 @@ export default class Shelf extends React.PureComponent<Props , State> {
         return (
             <div className="shelf shelf-admin">
                 <Header
-                    leftButton={<Link to="/"><span className="icon-back"/></Link>}
-                    rightButton={<span onClick={addToShelf} className="icon-add"/>}
+                    buttonLeft={<Link to="/"><span className="icon-back"/></Link>}
+                    buttonRight={<span onClick={addToShelf} className="icon-add"/>}
                 >
                     Admin
                 </Header>

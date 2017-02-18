@@ -29,7 +29,7 @@ export default class Basket extends React.PureComponent<Props , State> {
 
         return (
             <div className="basket">
-                <Header rightButton={<span className="icon-basket"/>}>
+                <Header buttonRight={<span className="icon-basket"/>}>
                     Basket <span className="count">{products.length}</span>
                 </Header>
                 {products.map((product, index) => {

@@ -56,12 +56,12 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
         return (
             <div className="product-admin">
                 <Header
-                    leftButton={
+                    buttonLeft={
                         <Link to="/shelf-admin">
                             <span className="icon-back"/>
                         </Link>
                     }
-                    rightButton={
+                    buttonRight={
                         <Link to="/shelf-admin">
                             <span className="icon-save" onClick={() => saveProduct(product)}/>
                         </Link>
