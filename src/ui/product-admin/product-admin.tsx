@@ -27,14 +27,23 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
         };
     }
 
-    changeProduct(productProperty: 'price' | 'name' | 'category' | 'color', event: React.SyntheticEvent<HTMLInputElement>) {
+    getTargetValue(type: string, value: string): string | number {
+        if (type === 'number') {
+            return parseFloat(value);
+        }
+        return value;
+    }
+
+    changeProduct(productProperty: 'price' | 'name' | 'category' | 'color',
+                  event: React.SyntheticEvent<HTMLInputElement>) {
+        const targetValue: string | number = this.getTargetValue(event.currentTarget.type, event.currentTarget.value);
         this.setState(
             {
                 product: Object.assign(
                     {},
                     this.state.product,
                     {
-                        [productProperty]: (event.target['type'] === 'number' ? parseFloat(event.target['value']) :  event.target['value'])
+                        [productProperty]: targetValue
                     }
                 )
             });
@@ -47,8 +56,16 @@ export default class ProductAdmin extends React.PureComponent<Props , State> {
         return (
             <div className="product-admin">
                 <Header
-                    leftButton={<Link to="/shelf-admin"><span className="icon-back"/></Link>}
-                    rightButton={<Link to="/shelf-admin"><span className="icon-save" onClick={() => saveProduct(product)}/></Link>}
+                    leftButton={
+                        <Link to="/shelf-admin">
+                            <span className="icon-back"/>
+                        </Link>
+                    }
+                    rightButton={
+                        <Link to="/shelf-admin">
+                            <span className="icon-save" onClick={() => saveProduct(product)}/>
+                        </Link>
+                    }
                 >
                     Admin
                 </Header>

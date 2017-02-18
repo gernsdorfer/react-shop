@@ -12,16 +12,24 @@ interface State {
 }
 
 export default class Basket extends React.PureComponent<Props , State> {
+
+    sumProducts(products: Product[]) {
+        return Math.round(
+                products.reduce(
+                    (start, current) => start + current.price, 0
+                )
+                * 100
+            ) / 100;
+    }
+
     render() {
         const {products, removeProduct} = this.props;
 
-        const sum = products.length ? <div className="sum">{Math.round(products.reduce((start, current) => start + current.price, 0) * 100) / 100}€</div> : null;
+        const sum = products.length ? <div className="sum">{this.sumProducts(products)}€</div> : null;
 
         return (
             <div className="basket">
-                <Header
-                    rightButton={<span className="icon-basket"/>}
-                >
+                <Header rightButton={<span className="icon-basket"/>}>
                     Basket <span className="count">{products.length}</span>
                 </Header>
                 {products.map((product, index) => {

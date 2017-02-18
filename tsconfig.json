@@ -26,6 +26,7 @@
     "jest",
     "src/setupTests.ts"
   ],
+  "files": ["typings/window.d.ts"],
   "types": [
     "typePatches"
   ]

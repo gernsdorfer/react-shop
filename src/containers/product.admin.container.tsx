@@ -34,15 +34,22 @@ const mapDispatchToProps = (dispatch: Dispatch<AppState>): ConnectedDispatch => 
 
 class ProductAdminContainer extends React.PureComponent<ConnectedState & ConnectedDispatch & OwnProps, {}> {
     render() {
-        const {editProduct, shelfProducts, params = {productId: '0'}}  = this.props,
-
-            product: Product = shelfProducts
-                .filter((product) => product.id === parseInt(params.productId))
-                .reduce((start, current) => current, {id: 0, name: '', category: '',color: '', price: 0});
+        const {
+                editProduct,
+                shelfProducts,
+                params = {productId: '0'}
+            }  = this.props,
+            activeProductId = parseInt(params.productId, 10),
+            activeProduct: Product = shelfProducts
+                .filter((product) => product.id === activeProductId)
+                .reduce(
+                    (start, current) => current,
+                    {id: 0, name: '', category: '', color: '', price: 0}
+                );
         return (
             <Shop>
                 <ProductAdmin
-                    product={product}
+                    product={activeProduct}
                     saveProduct={(product) => editProduct(product)}
                 />
             </Shop>

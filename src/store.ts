@@ -1,9 +1,9 @@
-import {createStore, combineReducers, Store} from 'redux';
+import {createStore, combineReducers, applyMiddleware, Store} from 'redux';
 import {rootReducer, AppState} from './reducers';
+import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 
 const configureStore: Store<AppState> = createStore(
     combineReducers<AppState>(rootReducer),
-    process.env.NODE_ENV !== 'production' && window.hasOwnProperty('__REDUX_DEVTOOLS_EXTENSION__') &&
-    window['__REDUX_DEVTOOLS_EXTENSION__']()
+    composeWithDevTools({})(applyMiddleware())
 );
 export default configureStore;

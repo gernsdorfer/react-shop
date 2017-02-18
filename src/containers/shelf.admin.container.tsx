@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {Product} from '../models/product';
+import {Product, newProduct} from '../models/product';
 import {AppState} from '../reducers/index';
 import {Dispatch} from 'redux';
 import ShelfAdmin from '../ui/shelf-admin';
@@ -40,7 +40,7 @@ class ShelfAdminContainer extends React.PureComponent<ConnectedState & Connected
                 <ShelfAdmin
                     products={shelfProducts}
                     removeFromShelf={(productId) => removeProduct(productId)}
-                    addToShelf={() => addProduct({name: 'New Product', category: 'Lipstick', color: '#333', price: 19.99, id: new Date().getUTCMilliseconds()})}
+                    addToShelf={() => addProduct(newProduct)}
                 />
             </Shop>
         );

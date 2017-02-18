@@ -1,9 +1,10 @@
 import * as React from 'react';
 import './header.css';
+import ReactNode = React.ReactNode;
 
 interface Props {
-    leftButton?: any;
-    rightButton?: any;
+    leftButton?: ReactNode;
+    rightButton?: ReactNode;
 }
 
 interface State {
