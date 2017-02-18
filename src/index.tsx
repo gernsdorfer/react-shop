@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 import store from './store';
 import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
-
 import Market from './containers/market.container';
 import ShelfAdmin from './containers/shelf.admin.container';
 import ProductAdmin from './containers/product.admin.container';

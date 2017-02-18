@@ -9,7 +9,7 @@ export interface Product {
 export const newProduct: Product = {
     name: 'New Product',
     category: 'Lipstick',
-    color: '#333',
+    color: '#332',
     price: 19.99,
     id: new Date().getUTCMilliseconds()
 };
