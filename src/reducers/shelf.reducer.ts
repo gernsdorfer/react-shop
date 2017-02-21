@@ -2,11 +2,11 @@ import {Product, demoProducts} from '../models/product';
 import {REMOVE_PRODUCT, EDIT_PRODUCT, CREATE_PRODUCT} from '../actions/shelf.action';
 
 export interface Shelf {
-    products: Array<Product>;
+    readonly products: Array<Product>;
 }
 interface Action {
-    type: string;
-    payload: {
+    readonly type: string;
+    readonly payload: {
         product: Product,
         productId: number
     };

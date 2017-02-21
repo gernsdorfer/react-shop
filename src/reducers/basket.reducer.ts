@@ -3,11 +3,11 @@ import {ADD_TO_BASKET, REMOVE_FROM_BASKET} from '../actions/basket.action';
 import {EDIT_PRODUCT} from '../actions/shelf.action';
 
 export interface Basket {
-    products: Array<Product>;
+    readonly products: Array<Product>;
 }
 interface Action {
-    type: string;
-    payload: {
+    readonly type: string;
+    readonly payload: {
         product: Product,
         productIndex: number
     };
