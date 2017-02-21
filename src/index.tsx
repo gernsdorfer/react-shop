@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/lib/ReactDOMFiber';
 import store from './store';
 import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
